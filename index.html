@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Espacio Minimalista</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><strong>Marina</strong>Tejero</div>
+        <nav>
+            <button class="nav-btn activo" data-seccion="inicio">Inicio</button>
+            <button class="nav-btn" data-seccion="proyectos">Proyectos</button>
+            <button class="nav-btn" data-seccion="contacto">Contacto</button>
+            <button id="tema-btn" aria-label="Cambiar tema">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Inicio -->
+        <section id="inicio" class="seccion activa">
+            <h1>Diseño limpio.<br>Ideas claras.</h1>
+            <p>Bienvenido a mi espacio personal. Aquí comparto proyectos minimalistas enfocados en la sencillez y la funcionalidad.</p>
+            <button class="btn-principal" onclick="cambiarSeccion('proyectos')">Ver proyectos →</button>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="proyectos" class="seccion">
+            <h2>Viajes a futuro:</h2>
+            <div class="grid-proyectos">
+                <article class="tarjeta">
+                    <h3>DisneyLand París</h3>
+                    <p>Una aplicación web rápida y sin distracciones.</p>
+                </article>
+                <article class="tarjeta">
+                    <h3>Proyecto Dos</h3>
+                    <p>Diseño de interfaz centrado en la experiencia de usuario.</p>
+                </article>
+                <article class="tarjeta">
+                    <h3>Proyecto Tres</h3>
+                    <p>Sistema de organización visual para equipos creativos.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="seccion">
+            <h2>Hablemos</h2>
+            <p>¿Tienes una idea en mente? Envíame un mensaje directo.</p>
+            <form id="formulario-contacto">
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="email" placeholder="Tu correo electrónico" required>
+                <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                <button type="submit" class="btn-principal">Enviar mensaje</button>
+            </form>
+            <p id="mensaje-confirmacion" class="oculto">¡Gracias! Tu mensaje ha sido enviado.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 — Creado con código limpio.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
