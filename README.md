@@ -15,4 +15,4 @@ Puedes visitar el portfolio publicado aquí: mariitejero.github.io
 
 ## 📫 Contacto
 * **GitHub:** [@Mariitejero](https://github.com)
-* Email:** *[marinatejeroperez1@gmail.com]*
+* Email:** *marinatejeroperez1@gmail.com*
