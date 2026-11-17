@@ -181,3 +181,8 @@ footer {
     padding-top: 2rem;
     font-size: 0.85rem;
 }
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--texto);
+    border-color: transparent;
+}
