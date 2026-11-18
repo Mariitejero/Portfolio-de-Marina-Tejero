@@ -11,7 +11,7 @@
         <div class="logo"><strong>Marina</strong>Tejero</div>
         <nav>
             <button class="nav-btn activo" data-seccion="inicio">Inicio</button>
-            <button class="nav-btn" data-seccion="proyectos">Proyectos</button>
+            <button class="nav-btn" data-seccion="proyectos">Destinos</button>
             <button class="nav-btn" data-seccion="contacto">Contacto</button>
             <button id="tema-btn" aria-label="Cambiar tema">🌙</button>
         </nav>
@@ -29,19 +29,22 @@
         <section id="proyectos" class="seccion">
             <h2>Viajes a futuro:</h2>
             <div class="grid-proyectos">
-                <article class="tarjeta">
+                <a href="disneyland.html" class="tarjeta">
                     <h3>DisneyLand París</h3>
                     <p>El primer viaje que haremos en 2027.</p>
-                </article>
-                <article class="tarjeta">
+                </a>
+
+                <a href="albania.html" class="tarjeta">
                     <h3>Albania (Tirana)</h3>
                     <p>Un buen destino para verano.</p>
-                </article>
-                <article class="tarjeta">
+                </a>
+
+                <a href="sorpresa.html" class="tarjeta">
                     <h3>Destino sorpresa</h3>
                     <p>Aún por descubrir.</p>
-                </article>
+                </a>
             </div>
+
         </section>
 
         <!-- Sección Contacto -->
@@ -61,6 +64,14 @@
     <footer>
         <p>© 2026 — Creado con código limpio.</p>
     </footer>
+
+    <div id="modal-tarjeta" class="modal oculto">
+        <div class="modal-contenido">
+            <button id="cerrar-modal" class="cerrar-btn">✕</button>
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-texto"></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
