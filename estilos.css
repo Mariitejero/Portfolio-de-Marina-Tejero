@@ -281,17 +281,20 @@ input:focus, textarea:focus {
 .carrusel-btn.prev { left: 1rem; }
 .carrusel-btn.next { right: 1rem; }
 
-/* Grid de Fechas y Presupuesto */
+/* Grid de Fechas y Presupuesto apilado en vertical */
 .grid-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: 1fr; /* Pone una tarjeta debajo de la otra */
     gap: 1.5rem;
     margin-bottom: 3rem;
 }
 
+/* Asegura que los párrafos dentro de estas tarjetas aprovechen todo el ancho */
 .grid-info .tarjeta p {
-    margin-bottom: 0.4rem;
+    max-width: 100%;
+    margin-bottom: 0.6rem;
 }
+
 
 /* Lista de cosas para hacer */
 .lista-planes h2 {
@@ -474,3 +477,40 @@ input:focus, textarea:focus {
 .cerrar-lightbox:hover {
     opacity: 1;
 }
+
+.linea-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px dashed var(--borde);
+    padding-bottom: 0.4rem;
+}
+
+.linea-precio span:last-child {
+    white-space: nowrap; /* Evita que el número y el símbolo € se separen en dos líneas */
+    font-weight: 500;
+    color: var(--texto);
+}
+
+.total-precio {
+    border-bottom: none;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    font-weight: 600;
+    color: var(--texto);
+}
+
+.enlace-hotel {
+    color: var(--texto);
+    text-decoration: underline;
+    text-decoration-color: var(--borde);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease, opacity 0.2s ease;
+}
+
+.enlace-hotel:hover {
+    text-decoration-color: var(--texto);
+    opacity: 0.8;
+}
+
