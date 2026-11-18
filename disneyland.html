@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisneyLand París — Marina Tejero</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo" style="text-decoration: none; color: inherit; font-weight: 600;">
+            ← Volver al inicio
+        </a>
+        <nav>
+            <button id="tema-btn" aria-label="Cambiar tema">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+       <section class="seccion activa">
+    <!-- Cabecera estilo revista -->
+            <div class="cabecera-editorial">
+                <span class="etiqueta-viaje">FRANCIA · INVIERNO 2027</span>
+                <h1>DisneyLand París:</h1>
+                <p class="subtitulo-editorial">Cinco días entre magia, atracciones inolvidables y arquitectura parisina.</p>
+            </div>
+
+    <!-- Galería Editorial (Mosaico tipo revista) -->
+            <div class="galeria-editorial">
+                <figure class="foto-principal">
+                    <img src="img/Mickey y Minie en Disneyland París.jpg" alt="Mickey y Minie en Disneyland París">
+                    <figcaption>Mickey y Minie en Disneyland París.</figcaption>
+                </figure>
+                <figure class="foto-secundaria">
+                    <img src="img/Torre Eiffel.jpeg" alt="Torre Eiffel">
+                    <figcaption>Torre Eiffel.</figcaption>
+                </figure>
+                <figure class="foto-secundaria">
+                    <img src="img/Calles de París.jpg" alt="Avenida de La Ópera en París.">
+                    <figcaption>Avenida de La Ópera en París.</figcaption>
+                </figure>
+            </div>
+            <!-- Bloques de Fechas y Presupuesto -->
+            <div class="grid-info">
+                <div class="tarjeta">
+                    <h3>📅 Fechas previstas:</h3>
+                    <p><strong>Ida:</strong> 12 de enero de 2027</p>
+                    <p><strong>Vuelta:</strong> 17 de enero de 2027</p>
+                    <p><strong>Duración:</strong> 6 días / 5 noches</p>
+                </div>
+
+            <div class="tarjeta">
+
+            <h3>💶 Presupuesto estimado con Viajes ElCorteInglés</h3>
+            
+            <p class="linea-precio">
+                <span>
+                    <a href="https://www.hotel-bb.com/es/hotel/disneyland-paris?original_action=%2Fes%2Fhotel%2Fdisneyland-paris&gps%5Bvalue%5D=48.8770462%2C2.80988&gps%5Bdistance%5D%5Bfrom%5D=50&arrival_date=01%2F12%2F2027&departure_date=01%2F13%2F2027&destination=pr%C3%A8s%20de%20Disneyland%C2%AE%20Paris&internal_keywords=pr%C3%A8s%20de%20Disneyland%C2%AE%20Paris&viewport=1260x380&r1_ad=2&currency_code=EUR" target="_blank" rel="noopener noreferrer" class="enlace-hotel">
+                        B & B Hotel ↗
+                    </a> (Hotel de llegada)
+                </span>
+                <span>80 €</span>
+            </p>
+
+            <p class="linea-precio">
+                <span>
+                    <a href="https://booking.com" target="_blank" rel="noopener noreferrer" class="enlace-hotel">
+                        Hotel Dali Val d'Europe (4*) ↗
+                    </a> + Entradas a los parques
+                </span>
+                <span>581,94 €</span>
+            </p>
+
+            <p class="linea-precio">
+                <span>
+                    <a href="https://booking.com" target="_blank" rel="noopener noreferrer" class="enlace-hotel">
+                        Novotel Paris Centre Tour Eiffel (4*, Hotel en el centro) ↗
+                    </a>
+                </span>
+                <span>324,41 €</span>
+            </p>
+
+            <p class="linea-precio">
+                <span>Sólo entradas a los parques</span>
+                <span>312 €</span>
+            </p>
+
+            <p class="linea-precio">
+                <span>Comida y extras</span>
+                <span>- €</span>
+            </p>
+
+            <p class="linea-precio total-precio">
+                <span>Total aprox. / persona</span>
+                <span>493,175 €</span>
+            </p>
+        </div>
+
+
+
+            <!-- Lista de cosas para hacer -->
+            <div class="lista-planes">
+                <h2>Itinerario y planes:</h2>
+                <ul class="checklist">
+                    <li><label><input type="checkbox"> Visitar ambos Parques</label></li>
+                    <li><label><input type="checkbox"> Subir a una barca por el río Sena con vistas a la Torre Eiffel</label></li>
+                    <li><label><input type="checkbox"> Pasar dos días recorriendo el centro de París</label></li>
+                    <li><label><input type="checkbox"> Visitar el cabaret de Moulan Rouge</label></li>
+                    <li><label><input type="checkbox"> Ver el museo del Louvre</label></li>
+
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Marina Tejero</p>
+    </footer>
+
+    <!-- Visor de fotos a pantalla completa (Lightbox) -->
+    <div id="lightbox" class="lightbox oculto">
+        <button id="cerrar-lightbox" class="cerrar-lightbox" aria-label="Cerrar foto">✕</button>
+        <div class="lightbox-contenido">
+            <img id="lightbox-img" src="" alt="">
+            <p id="lightbox-pie"></p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+

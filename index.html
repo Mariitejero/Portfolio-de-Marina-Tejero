@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Espacio Minimalista</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><strong>Marina</strong>Tejero</div>
+        <nav>
+            <button class="nav-btn activo" data-seccion="inicio">Inicio</button>
+            <button class="nav-btn" data-seccion="proyectos">Destinos</button>
+            <button class="nav-btn" data-seccion="contacto">Contacto</button>
+            <button id="tema-btn" aria-label="Cambiar tema">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Inicio -->
+        <section id="inicio" class="seccion activa">
+            <h1>Diseño limpio.<br>Ideas claras.</h1>
+            <p>Bienvenido a mi espacio personal. Aquí comparto proyectos minimalistas enfocados en la sencillez y la funcionalidad.</p>
+            <button class="btn-principal" onclick="cambiarSeccion('proyectos')">Ver proyectos →</button>
+        </section>
+
+        <!-- Sección Proyectos -->
+        <section id="proyectos" class="seccion">
+            <h2>Viajes a futuro:</h2>
+            <div class="grid-proyectos">
+                <a href="disneyland.html" class="tarjeta">
+                    <h3>DisneyLand París</h3>
+                    <p>El primer viaje que haremos en 2027.</p>
+                </a>
+
+                <a href="albania.html" class="tarjeta">
+                    <h3>Albania (Tirana)</h3>
+                    <p>Un buen destino para verano.</p>
+                </a>
+
+                <a href="sorpresa.html" class="tarjeta">
+                    <h3>Destino sorpresa</h3>
+                    <p>Aún por descubrir.</p>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="seccion">
+            <h2>Hablemos:</h2>
+            <p>¿Tienes una destino en mente? Envíame un mensaje directo.</p>
+            <form id="formulario-contacto">
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
+                <input type="email" name="email" placeholder="Tu correo electrónico" required>
+                <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                <button type="submit" class="btn-principal">Enviar mensaje</button>
+            </form>
+            <p id="mensaje-confirmacion" class="oculto">¡Gracias! Tu mensaje ha sido enviado.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 — Creado con código limpio.</p>
+    </footer>
+
+    <div id="modal-tarjeta" class="modal oculto">
+        <div class="modal-contenido">
+            <button id="cerrar-modal" class="cerrar-btn">✕</button>
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-texto"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

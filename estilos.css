@@ -1,0 +1,516 @@
+/* Variables de color para modo claro y oscuro */
+:root {
+    --bg: #ffffff;
+    --texto: #111111;
+    --texto-secundario: #666666;
+    --borde: #eaeaea;
+    --tarjeta-bg: #fafafa;
+}
+
+body.oscuro {
+    --bg: #111111;
+    --texto: #f5f5f5;
+    --texto-secundario: #a0a0a0;
+    --borde: #2a2a2a;
+    --tarjeta-bg: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--texto);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cabecera y Navegación */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--borde);
+}
+
+.logo {
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-btn, #tema-btn {
+    background: none;
+    border: none;
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.nav-btn:hover, .nav-btn.activo {
+    color: var(--texto);
+    font-weight: 600;
+}
+
+/* Secciones dinámicas */
+main {
+    min-height: 60vh;
+    padding: 4rem 0;
+}
+
+.seccion {
+    display: none;
+    animation: aparecer 0.4s ease forwards;
+}
+
+.seccion.activa {
+    display: block;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    letter-spacing: -1px;
+    margin-bottom: 2rem;
+}
+
+p {
+    color: var(--texto-secundario);
+    max-width: 550px;
+    margin-bottom: 2rem;
+}
+
+/* Botones y Tarjetas */
+.btn-principal {
+    background-color: var(--texto);
+    color: var(--bg);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn-principal:hover {
+    opacity: 0.85;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta {
+    display: block;              /* Hace que el enlace ocupe toda la caja */
+    text-decoration: none;       /* Quita el subrayado de enlace */
+    color: inherit;              /* Mantiene el color de texto del tema */
+    background-color: var(--tarjeta-bg);
+    border: 1px solid var(--borde);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+}
+
+.tarjeta h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.tarjeta p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 450px;
+}
+
+input, textarea {
+    background-color: var(--tarjeta-bg);
+    border: 1px solid var(--borde);
+    color: var(--texto);
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.oculto {
+    display: none;
+}
+
+#mensaje-confirmacion {
+    margin-top: 1rem;
+    color: var(--texto);
+    font-weight: 500;
+}
+
+footer {
+    border-top: 1px solid var(--borde);
+    padding-top: 2rem;
+    font-size: 0.85rem;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--texto);
+    border-color: transparent;
+}
+
+.tarjeta {
+    cursor: pointer; /* Indica que se puede hacer clic */
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    z-index: 100;
+}
+
+.modal.oculto {
+    display: none;
+}
+
+.modal-contenido {
+    background-color: var(--bg);
+    border: 1px solid var(--borde);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--texto-secundario);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Carrusel de fotos */
+.carrusel {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    margin-bottom: 2.5rem;
+}
+
+.carrusel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    animation: aparecer 0.3s ease;
+}
+
+.carrusel-img.activa {
+    display: block;
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--bg);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.carrusel-btn:hover {
+    opacity: 1;
+}
+
+.carrusel-btn.prev { left: 1rem; }
+.carrusel-btn.next { right: 1rem; }
+
+/* Grid de Fechas y Presupuesto apilado en vertical */
+.grid-info {
+    display: grid;
+    grid-template-columns: 1fr; /* Pone una tarjeta debajo de la otra */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Asegura que los párrafos dentro de estas tarjetas aprovechen todo el ancho */
+.grid-info .tarjeta p {
+    max-width: 100%;
+    margin-bottom: 0.6rem;
+}
+
+
+/* Lista de cosas para hacer */
+.lista-planes h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.checklist label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--texto-secundario);
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checklist input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--texto);
+    cursor: pointer;
+}
+
+/* Tacha el texto automáticamente al marcar la casilla */
+.checklist label:has(input:checked) {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.subtitulo-tabulado {
+    padding-left: 1.5rem; /* Ajusta este valor (ej. 1rem, 2rem) según cuánto espacio quieras */
+}
+
+/* Cabecera estilo revista */
+.cabecera-editorial {
+    margin-bottom: 2.5rem;
+}
+
+.etiqueta-viaje {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--texto-secundario);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.subtitulo-editorial {
+    font-size: 1.15rem;
+    color: var(--texto-secundario);
+    max-width: 600px;
+    margin-bottom: 0;
+}
+
+/* Galería Editorial (1 foto grande arriba + 2 columnas abajo) */
+.galeria-editorial {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.foto-principal {
+    grid-column: span 2; /* Ocupa todo el ancho superior */
+}
+
+.galeria-editorial figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.galeria-editorial img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.foto-secundaria img {
+    height: 280px; /* Un poco más bajas para crear contraste visual */
+}
+
+.galeria-editorial img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
+}
+
+.galeria-editorial figcaption {
+    font-size: 0.82rem;
+    color: var(--texto-secundario);
+    font-style: italic;
+}
+
+/* Adaptación a móviles: todas las fotos a una columna */
+@media (max-width: 600px) {
+    .galeria-editorial {
+        grid-template-columns: 1fr;
+    }
+    .foto-principal {
+        grid-column: span 1;
+    }
+    .galeria-editorial img,
+    .foto-secundaria img {
+        height: 240px;
+    }
+}
+
+/* Cursor de lupa en las fotos de la galería */
+.galeria-editorial img {
+    cursor: zoom-in;
+}
+
+/* Visor a pantalla completa (Lightbox) */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    animation: aparecer 0.25s ease;
+}
+
+.lightbox.oculto {
+    display: none;
+}
+
+.lightbox-contenido {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.lightbox-contenido img {
+    max-width: 100%;
+    max-height: 80vh; /* Muestra la foto entera sin recortar */
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+#lightbox-pie {
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
+}
+
+.cerrar-lightbox {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.cerrar-lightbox:hover {
+    opacity: 1;
+}
+
+.linea-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px dashed var(--borde);
+    padding-bottom: 0.4rem;
+}
+
+.linea-precio span:last-child {
+    white-space: nowrap; /* Evita que el número y el símbolo € se separen en dos líneas */
+    font-weight: 500;
+    color: var(--texto);
+}
+
+.total-precio {
+    border-bottom: none;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    font-weight: 600;
+    color: var(--texto);
+}
+
+.enlace-hotel {
+    color: var(--texto);
+    text-decoration: underline;
+    text-decoration-color: var(--borde);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s ease, opacity 0.2s ease;
+}
+
+.enlace-hotel:hover {
+    text-decoration-color: var(--texto);
+    opacity: 0.8;
+}
+
